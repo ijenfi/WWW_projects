@@ -1,0 +1,19 @@
+nput:invalid {
+  background: hsla(0, 90%, 70%, 1);
+}
+
+input:valid {
+  background: hsla(100, 90%, 70%, 1);
+}
+
+
+body {
+  padding: 3em;
+}
+label {
+  display: block;
+}
+input {
+  padding: 0.25em 0;
+  margin-bottom: 0.75em;
+}

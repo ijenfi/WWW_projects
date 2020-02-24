@@ -1,0 +1,52 @@
+<!doctype html>
+<html lan="en">
+<head>
+
+<meta charset="utf-8">
+
+<title>Handling errors</title>
+
+</head>
+<body>
+<div id="message"></div>
+<script >
+
+const isZipcodeValid = function(zipCode){
+	const validCodeFormat = /^\d{5}$/;
+	
+	if(!zipCode){
+		throw new Error('A zip is missing error');
+	};
+	
+	if(validCodeFormat.test(zipCode)){
+		return true;
+	}
+	return false;
+};
+
+const tryZipCode = function(zipCode){
+
+	let validity;
+	
+	try {
+		validity = isZipcodeValid(zipCode);
+	
+		if(validity){
+			document.querySelector('#message').innerHTML = 'Valid ZipCode';
+		}
+		else{
+			document.querySelector('#message').innerHTML = 'Invalid ZipCode';
+			}
+	}catch(err){
+			document.querySelector('#message').innerHTML = 'Enter ZIP code';
+
+	}
+	
+};
+tryZipCode('55d56');
+
+</script>
+
+
+</body>
+</html>

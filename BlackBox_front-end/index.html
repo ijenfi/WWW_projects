@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" href="static/dependencies/bootstrap.min.css">
+	<link rel="stylesheet" href="static/style.css">
+	<script src="static/dependencies/jquery-3.3.1.slim.min.js"></script>
+	<script src="static/dependencies/popper.min.js"></script>
+	<script src="static/dependencies/bootstrap.min.js"></script>
+	<script src="static/functions.js"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+		
+			<div class="row justify-content-center">
+				<div class="col-md-4 mx-auto mt-3">
+
+					<h5>Power off</h5>
+					
+						<button class="btn btn-light" onclick="powerOff()">Power off</button>
+					
+				</div>
+				<div class="col-md-4 mx-auto mt-3">
+				
+					<h5>Resolution</h5>
+					<div class="btn-group unscrollable" role="group" aria-label="Basic example">
+						<button class="btn btn-light active" onclick="resolution(640, 480)">640 x 480</button>
+						<button class="btn btn-light" onclick="resolution(800, 600)">800 x 600</button>
+						<button class="btn btn-light" onclick="resolution(1280, 760)">1280 x 760</button>
+					</div>
+				</div>
+			</div>
+		
+			<div class="row justify-content-center">
+
+				<div class="col-md-4 mx-auto mt-3">
+					<h5>Save before</h5>
+					<div class="btn-group unscrollable" role="group" aria-label="Basic example">
+						<button class="btn btn-light" onclick="timeBefore(5)">5s</button>
+						<button class="btn btn-light" onclick="timeBefore(15)">15s</button>
+						<button class="btn btn-light" onclick="timeBefore(20)">20s</button>
+					</div>
+				</div>
+				<div class="col-md-4 mx-auto mt-3">
+
+					<h5>Save after</h5>
+					<div class="btn-group unscrollable" role="group" aria-label="Basic example">
+						<button class="btn btn-light" onclick="timeAfter(2)">2s</button>
+						<button class="btn btn-light" onclick="timeAfter(5)">5s</button>
+						<button class="btn btn-light" onclick="timeAfter(10)">10s</button>
+					</div>
+				</div>
+			</div>
+		
+			<div class="row justify-content-center">
+				
+				<div class="col-md-4 mx-auto mt-3">
+					<h5>Fps</h5>
+					<div class="btn-group unscrollable" role="group" aria-label="Basic example">
+					<button class="btn btn-light" onclick="fps(25)">25</button>
+					<button class="btn btn-light" onclick="fps(50)">50</button>
+					</div>
+				</div>
+				<div class="col-md-4 mx-auto mt-3">
+
+					<table class="table table-sm table-dark">
+						<tr>
+							<th><h5>Parameters</h5></th>
+						</tr>
+						<tr>
+							<td>
+								<a>param: value</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a>param: value</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a>param: value</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a>param: value</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a>param: value</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<div class="row justify-content-center">
+				<div class="col-md-4 mx-auto mt-3">
+				<form>
+					<h5>Wifi</h5>
+					<table class="table table-borderless table-dark">
+						<tr>
+							<td>
+								SSID:
+							</td>
+							<td>
+								<input type="text" name="ssid">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								password:
+							</td>
+							<td>
+								<input type="password" name="password">
+							</td>
+						</tr>
+					</table>
+					<button type="button" class="btn btn-light"  onclick="displayValues(form.ssid.value,form.password.value)">Submit</button>
+				</form>
+					
+					
+				</div>
+			
+				
+				<div class="col-md-4 mx-auto mt-3">
+					<h5>Camera Live feed</h5>
+					<div class="btn-group unscrollable" role="group" aria-label="Basic example">
+					<button class="btn btn-light" onclick="liveStart()">Start</button>
+					<button class="btn btn-light" onclick="liveStop()">Stop</button>
+					</div>
+				</div>
+				
+			</div>
+			
+			<div class="row justify-content-center">
+			
+				<div class="col-md-4 mx-auto mt-3">
+					<br><br><br>
+					<h5>Trigger<h5/>
+					<button class="btn btn-light" type="button" onclick="trigger()">Save Video</button>
+				</div>
+				
+				<div class="col-md-4 mx-auto mt-3">
+				<br><br><br>
+					<h5>Available USB's</h5>
+					<div class="dropdown">
+						<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Dropdown button
+					    </button>
+						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+						<a class="dropdown-item" href="#">USB 1</a>
+						<a class="dropdown-item" href="#">USB 2</a>
+						<a class="dropdown-item" href="#">USB 3</a>
+						</div>
+					</div>
+					<div class="btn-group unscrollable" role="group" aria-label="Basic example">
+					<button class="btn btn-light" type="button" onclick="usbApply">Apply</button>
+					<button class="btn btn-light" type="button" onclick="usbEject">Eject</button>
+					</div>
+				</div>
+				
+			</div>
+				
+			<div class="row justify-content-center">
+				<div class="col-md-4 mx-auto mt-3">
+					<table class="table table-sm table-dark">
+						<tr>
+							<th><h5>Videos</h5></th>
+						</tr>
+						<tr>
+							<td>
+								<a href="">asdfdsagdsagdsag</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="">sd90a09dsa</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="">sdaokads</a>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<a href="">190381308</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+		
+		<div id="row justify-content-center mt-3">
+
+		</div>
+		<script>src="https://code.jquery.com/jquery-3.3.1.js"</script>
+		<script>
+			var down=false;
+			var scroll=0;
+			var y = 0;
+
+			$('html').mousedown(function(e) {
+				down = true;
+				scroll = this.scrollTop;
+				y = e.clientY;
+			}).mouseup(function() {
+				down = false;
+			}).mousemove(function(e) {
+				if (down) {
+					this.scrollTop = scroll + y - e.clientY;
+				}
+			}).mouseleave(function() {
+				down = false;
+			});
+			$(document).on('click','btn',function(){
+				$(this).addClass('active').siblings.removeClass('active')
+			})
+			
+
+			
+			$(".btn-group > .btn").click(function(){
+
+				$(this).siblings().removeClass("active");
+
+				$(this).addClass("active");
+
+			});
+
+		</script>
+	</body>
+</html>
